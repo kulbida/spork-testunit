@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'drb'
+DRb.start_service("druby://127.0.0.1:0")
+test_server = DRbObject.new_with_uri("druby://127.0.0.1:8988")
+begin
+  result = test_server.run(ARGV, $stderr, $stdout)
+rescue DRb::DRbConnError
+  puts 'Error: Seems like Drb server is not running. Make sure you run `spork` command first.'
+end
