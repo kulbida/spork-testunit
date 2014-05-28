@@ -4,6 +4,16 @@ This includes a plugin for spork to enable Test::Unit support for spork. It also
 
 Then, once spork is running, invoke @testdrb@ (e.g. `testdrb path/to/test/test.rb`) to run your tests under Spork.
 
+Good part is that you still able to run your tests in `old` manner, like
+```ruby
+rake test TEST=path/to/your_test.rb
+```
+or simply
+```ruby
+rake test
+```
+to tun all test suite.
+
 ### Gotchas
 This gem autoloads `test_helper.rb` file, so there is no need to require it in every test file.
 But if you have already a bunch of tests WITH `require 'test_helper.rb'`
