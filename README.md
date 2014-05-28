@@ -2,15 +2,19 @@
 
 This includes a plugin for spork to enable Test::Unit support for spork. It also comes with a very bare-bones drb client to run tests.
 
-Then, once spork is running, invoke @testdrb@ (e.g. `testdrb path/to/test/test.rb`) to run your tests under Spork.
+Then, once spork is running, invoke `testdrb`:
+```ruby
+$ testdrb path/to/your_test.rb
+```
+to run your tests under Spork.
 
 Good part is that you still able to run your tests in `old` manner, like
 ```ruby
-rake test TEST=path/to/your_test.rb
+$ rake test TEST=path/to/your_test.rb
 ```
 or simply
 ```ruby
-rake test
+$ rake test
 ```
 to tun all test suite.
 
