@@ -2,17 +2,18 @@ h1. Test::Unit support for Spork with ruby 1.9.2 and Rails 3.2.x support
 
 This includes a plugin for spork to enable Test::Unit support for spork. It also comes with a very bare-bones drb client to run tests.
 
-Then, once spork is running, invoke @testdrb@ (e.g. @testdrb path/to/test/test.rb@) to run your tests under Spork.
+Then, once spork is running, invoke @testdrb@ (e.g. `testdrb path/to/test/test.rb`) to run your tests under Spork.
 
-This gem autoloads @test_helper.rb@ file, so there is no need to require it in every test file.
-But if you have already a bunch of tests WITH @require 'test_helper.rb'@
+This gem autoloads `test_helper.rb` file, so there is no need to require it in every test file.
+But if you have already a bunch of tests WITH `require 'test_helper.rb'`
 at the bottom of each test file and you need to
 be compatible with some CI servers (you don't want to remove that line) then to avoid error message like "no such file to load `test_helper.rb`" you will need to add these extra config line to `Spork.each_run` block:
 
 
-@Spork.each_run do@
-  @$LOAD_PATH << "test/"@
-@end@
-
+```ruby
+Spork.each_run do
+  $LOAD_PATH << "test/"
+end
+```
 
 Now you should be compatible with Spork and CI servers.
