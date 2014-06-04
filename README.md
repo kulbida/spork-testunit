@@ -2,6 +2,8 @@
 
 This includes a plugin for spork to enable Test::Unit support for spork. It also comes with a very bare-bones drb client to run tests.
 
+Information about `spork` gem, how to install it and run is here https://github.com/sporkrb/spork
+
 Then, once spork is running, invoke `testdrb`:
 ```ruby
 $ testdrb path/to/your_test.rb
