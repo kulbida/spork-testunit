@@ -1,4 +1,4 @@
-## Test::Unit support for Spork with ruby 1.9.2 and Rails 3.2.x support
+## Test::Unit support for Spork with ruby 1.9.x/2.0 and Rails 3/4 support
 
 This includes a plugin for spork to enable Test::Unit support for spork. It also comes with a very bare-bones drb client to run tests.
 
