@@ -24,11 +24,11 @@ to tun all test suite.
 This gem autoloads `test_helper.rb` file, so there is no need to require it in every test file.
 But if you have already a bunch of tests WITH `require 'test_helper.rb'`
 at the bottom of each test file and you need to
-be compatible with some CI servers (you don't want to remove that line) then to avoid error message like "no such file to load `test_helper.rb`" you will need to add these extra config line to `Spork.each_run` block:
+be compatible with some CI servers (you don't want to remove that line) then to avoid error message like "no such file to load `test_helper.rb`" you will need to add these extra config line to `Spork.prefork` block:
 
 
 ```ruby
-Spork.each_run do
+Spork.prefork do
   $LOAD_PATH << "test/"
 end
 ```
